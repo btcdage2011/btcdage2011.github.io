@@ -1,0 +1,30 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>达哥文集 | BTCDAGE</title><meta name="description" content="达哥文集：独立思考，自由探索，长期主义。">
+<link rel="stylesheet" href="assets/site.css"><link rel="stylesheet" href="assets/content.css">
+<script src="assets/content.js"></script>
+<script>/* 提前兼容旧分享链接，避免先显示目录再跳转 */
+(function(){var id=decodeURIComponent(location.hash.slice(1));if(!id)return;
+var items=window.BTCDAGE_CONTENT.ARTICLES;for(var i=0;i<items.length;i++){
+if(items[i].id===id){location.replace(items[i].url);return;}}
+})();</script>
+<script defer src="assets/site.js"></script></head>
+<body class="content-index"><main class="content-shell">
+<div class="content-hero"><div class="eyebrow">BTCDAGE / Writing archive</div>
+<h1>达哥文集</h1><p>一起探索比特币世界。原有文章完整保留，后续文章按日期持续整理。</p></div>
+<label for="article-search" style="display:block;margin:0 0 10px">检索文章</label>
+<input class="content-search" id="article-search" type="search" placeholder="输入标题、日期或关键词" autocomplete="off">
+<div id="article-count" class="content-count" role="status"></div>
+<div id="article-list" class="content-list"></div>
+</main><script>
+(function(){const items=window.BTCDAGE_CONTENT.ARTICLES;
+const box=document.getElementById('article-list'),count=document.getElementById('article-count'),search=document.getElementById('article-search');
+function render(){box.replaceChildren();const q=search.value.trim().toLowerCase();let visible=0;
+items.forEach(item=>{if(![item.title,item.date,item.category].join(' ').toLowerCase().includes(q))return;visible++;
+const a=document.createElement('a');a.className='content-item';a.href=item.url;
+const info=document.createElement('div'),date=document.createElement('div'),title=document.createElement('h2'),arrow=document.createElement('span');
+date.className='content-date';date.textContent=item.date||item.category||'';title.textContent=item.title;
+arrow.className='content-arrow';arrow.textContent='↗';info.append(date,title);a.append(info,arrow);box.append(a);});
+count.textContent='显示 '+visible+' / '+items.length+' 篇文章';}
+search.addEventListener('input',render);render();
+})();</script></body></html>

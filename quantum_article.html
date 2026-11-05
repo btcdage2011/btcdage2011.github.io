@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>拨开“万级比特”与量子霸权迷雾：——量子计算破解比特币的理论谬误</title>
+<style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.8;
+            color: #333;
+            background-color: #f9f9fb;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px 60px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        /* 语言切换按钮样式 */
+        .toggle-wrapper {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        .lang-btn {
+            background-color: #f8f9fa;
+            color: #333;
+            border: 1px solid #d1d5db;
+            padding: 6px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .lang-btn:hover {
+            background-color: #e5e7eb;
+            border-color: #9ca3af;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            color: #111;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.3em;
+            color: #555;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+        h3 {
+            color: #2c3e50;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+            margin-top: 2em;
+        }
+        p {
+            margin-bottom: 1.2em;
+            text-align: justify;
+        }
+        .meta {
+            text-align: center;
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        code {
+            background-color: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.9em;
+            color: #d63384;
+            word-break: break-all;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e5e7eb;
+            margin: 30px 0;
+        }
+        blockquote {
+            margin: 20px 0;
+            padding: 15px 20px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #4a90e2;
+            color: #444;
+        }
+        blockquote p {
+            margin: 0;
+        }
+        ul, ol {
+            margin-bottom: 1.5em;
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 0.5em;
+        }
+        .reference-item {
+            font-size: 0.95em;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .reference-item a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        .reference-item a:hover {
+            text-decoration: underline;
+        }
+        .abstract {
+            background-color: #fcfcfc;
+            padding: 20px;
+            border: 1px solid #eaeaea;
+            border-radius: 6px;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 40px;
+        }
+
+        /* 移动端适配适配 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            .toggle-wrapper {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+<link href="assets/site.css" rel="stylesheet"/><script defer="" src="assets/site.js"></script></head>
+<body class="reading-page">
+<div class="container">
+<!-- 语言切换按钮 -->
+<div class="toggle-wrapper">
+<button class="lang-btn" id="lang-toggle" onclick="toggleLanguage()">Read in English 🇬🇧</button>
+</div>
+<!-- 中文版内容开始 -->
+<div id="content-zh">
+<h1>拨开“万级比特”与量子霸权迷雾：</h1>
+<p class="subtitle">——量子计算破解比特币的理论谬误</p>
+<div class="meta">
+<strong>作者</strong>：BTCDAGE<br/>
+<strong>发布日期</strong>：2026年4月2日<br/>
+<strong>Nostr 身份标识</strong>：<code>npub17ahz4xa3hvkvvhh4wguzzqknp8p7l5nyzzqc3z53uq538r5qgn0q40z7pw</code>
+</div>
+<hr/>
+<div class="abstract">
+<p><strong>摘要：</strong><br/>
+            2026年3月31日，受 Google Quantum AI 与中性原子量子计算公司 Oratomic 两篇论文叠加发酵的影响，加密市场出现显著恐慌。相关叙事声称“破解比特币私钥所需的物理量子比特已降至万级”。本文指出，这一结论建立在将不同技术路径下的理论参数进行理想化叠加的错误前提之上。通过梳理 Gil Kalai、Michel Dyakonov、Sankar Das Sarma 等学者的严谨论证，以及 IBM 对“量子霸权”实验的历史性评估，本文从噪声模型、误差扩展与物理实现路径出发，深度剖析了当前量子计算在可扩展性方面面临的根本性挑战。研究表明，所谓“万级量子比特威胁”更多源于参数外推与公关叙事的放大，而非具备工程能力的实现路径。比特币面临的假想威胁远超工程现实，社区完全拥有充足的窗口期进行后量子密码学（PQC）平滑升级。本文明确主张：在现有物理定律与工程约束下，构建足以破解比特币的容错量子计算机尚不存在可验证、可扩展且具备工程闭环的实现路径。在业界给出完整、可验证且可扩展的工程实现方案之前，该命题在科学逻辑上不成立。</p>
+<p><strong>关键词：</strong> 量子霸权；中性原子；Shor算法；比特币加密；误差扩展；科技泡沫；物理极限</p>
+</div>
+<hr/>
+<h3>引言：3.31 恐慌与“参数乘法”的叙事误导</h3>
+<p>2026年3月31日，加密市场经历了一次由量子计算研究进展触发的情绪性波动。市场恐慌主要源于对两项独立研究成果的叠加解读：一方面，Google Quantum AI 团队优化了针对 secp256k1 曲线的 Shor 算法，声称将所需逻辑量子比特降至约千级；另一方面，中性原子量子计算公司 Oratomic 宣称可显著降低逻辑量子比特所需的物理冗余。</p>
+<p>由此，市场形成了一个直观但高度简化的推演模型：<br/>
+<strong>逻辑量子比特 × 纠错开销 = 总物理量子比特</strong><br/>
+<strong>1,000（逻辑比特） × 10（纠错开销倍率） = 10,000（物理量子比特）。</strong></p>
+<p>基于此，市场进一步推导出“约 1 万物理量子比特即可破解”的结论。叠加“超导路线只需 9 分钟劫持交易”、“中性原子路线仅需 10 天破解休眠钱包”，以及实验室已捕获超过 6,100 个原子的新闻，最终导向了“算力规模追上理论仅需不到 2 倍阵列扩张”的末日结论。</p>
+<p>然而，剥开这层公关外衣，审视最前沿的物理学和数学基础理论，我们会发现，<strong>把不同路线、不同前提的理论极限强行相乘，本质上是一种将不同技术路径下的参数进行非一致性叠加的推演方法（本文称之为“弗兰肯斯坦数学”）</strong>，这在现实工程中完全站不住脚。这种“乘法模型”隐含了多个未经验证的关键前提：误差独立性、纠错效率在规模扩展下保持稳定，以及不同技术路径间的兼容性。</p>
+<p>若“万级量子比特即可破解比特币”成立，必须同时满足以下条件：</p>
+<ol>
+<li>误差在大规模系统中保持近似独立分布；</li>
+<li>纠错效率在规模扩展过程中不发生退化；</li>
+<li>不同物理实现路径（如超导与中性原子）的参数可以直接互换叠加；</li>
+<li>系统能够在长时间尺度上稳定运行而不发生退相干累积。</li>
+</ol>
+<p>上述模型可隐含为如下函数形式：</p>
+<blockquote><strong>Q_phys = Q_log × f(error, scale, topology)</strong></blockquote>
+<p>其中，纠错开销并非常数，而是关于误差率、系统规模与耦合拓扑的函数。将其简化为常数倍率，等价于假设：</p>
+<blockquote><strong>∂f/∂scale ≈ 0</strong></blockquote>
+<p>而在更一般的情形下，<strong>∂f/∂scale &gt; 0</strong>，且在相关噪声存在时可能呈超线性增长。然而，这一“纠错开销恒定”的假设目前既无理论证明，亦无实验支持。</p>
+<p>目前没有任何实验证据支持上述条件能同时成立。因此，该结论并非科学的工程推论，而是基于未验证前提的构造性构想。</p>
+<h3>一、 理论层面的关键约束：量子纠错的可扩展性疑云</h3>
+<p>3.31 叙事中“万级量子比特”路线的核心前提，在于量子纠错可以以接近常数的比例进行规模扩展。然而，这一前提本身正处于学界的持续争论之中。</p>
+<p><strong>1. 吉尔·卡莱（Gil Kalai）与噪声相关性的挑战</strong><br/>
+        市场天真地以为，既然 Oratomic 在局部实验中实现了 10:1 的纠错比例，那么扩大阵列规模就可以直接套用该比例。然而，耶鲁大学与耶路撒冷希伯来大学的顶尖数学家 Gil Kalai 指出，量子计算的主要障碍并非单个量子比特的噪声，而是<strong>噪声在大规模纠缠系统中的相关性放大效应</strong>。他提出，在高度纠缠的系统中，误差可能呈现非独立分布，从而削弱量子纠错的有效性。若噪声存在非局域相关性，阈值定理（Threshold Theorem）的前提将被破坏；而当前绝大多数容错量子计算的资源估算，正是建立在该定理成立的基础之上。</p>
+<p>这一观点直接挑战了当前许多资源估算模型中的关键假设。如果误差随系统规模呈超线性增长，纠错开销将变得不可承受。因此，将小规模实验（几十个比特）的纠错效率直接外推至万级规模，在数学与复杂系统理论上是失效的。在证明误差于扩展过程中不会产生相关性放大之前，此类比例推算不具备物理意义。</p>
+<p><strong>2. 米歇尔·贾科诺夫（Michel Dyakonov）与控制精度的极限</strong><br/>
+        新闻宣称中性原子路线可以运行 10 天来破解休眠钱包。但要实现这一假设，系统需同时满足以下极端苛刻的条件：</p>
+<ul>
+<li><strong>相干时间</strong>：T ≫ 10⁶ s；</li>
+<li><strong>门错误率</strong>：ε ≪ 10⁻¹²；</li>
+<li><strong>累计门操作数</strong>：N_ops &gt; 10⁸。</li>
+</ul>
+<p>并且，上述条件需在同一物理系统中同时成立，而非在不同实验条件下分别独立实现。</p>
+<p>法国理论物理学家 Michel Dyakonov 从物理实现角度提出了根本性质疑：量子系统的状态空间维度随比特数呈指数增长，这对连续变量的控制精度提出了灾难性的要求。</p>
+<p>在现实中，量子态的相干时间目前是以秒甚至毫秒来计算的。要在 1 万个相互纠缠的物理介质中，维持 1 亿个 Toffoli 门的电路深度，且在<strong>连续 10 天（864,000 秒）内不发生不可逆的退相干崩塌</strong>，这在目前的人类技术路径下是无法想象的；在现有的误差累积与控制精度约束下，它完全缺乏物理可实现性。所谓“10 天攻击路径”隐含了“长时相干可稳定维持且误差不发生灾难性累积”的断言，但目前没有任何实验系统能够支持这些前提。</p>
+<h3>二、 工程现实：规模扩展并非线性问题</h3>
+<p>即便假设物理学能够克服上述理论限制，当前的工程现实也足以证明“即将破解比特币”的言论极其荒诞。将“实验室捕获 6,100 个原子”等同于“具备相应的算力规模”，是一种典型的概念偷换。<br/>
+        当前量子系统仍处于 NISQ（Noisy Intermediate-Scale Quantum，含噪中型量子）范式，而 Shor 算法所需的是 FTQC（Fault-Tolerant Quantum Computing，容错量子计算）范式。在当前的物理与工程框架下，二者之间不存在连续可扩展的路径。</p>
+<p><strong>1. 桑卡尔·达斯·萨尔马（Sankar Das Sarma）的“纸老虎”论</strong><br/>
+        马里兰大学顶尖凝聚态物理学家 Sankar Das Sarma 曾直言不讳地指出，当今的量子计算机是一只<strong>“纸老虎”</strong>。他形象地比喻道：“这就好比试图用 1900 年代的真空管，来制造当今性能最强的智能手机。”</p>
+<p>实验室利用光镊捕获 6,100 个原子，仅仅是将它们固定在网格中。要运行 Shor 算法，这些原子必须进行高保真度的多步双量子比特门操作。在现实中，保真度会随着操作步数的增加而迅速呈指数级下跌。从数百比特扩展到上万个容错量子比特，是一次计算范式的跃迁，而非简单的规模放大。</p>
+<p><strong>2. 伪造的基准测试：IBM 对“量子霸权”的再评估</strong><br/>
+        回顾 2019 年 Google 宣称实现“量子霸权”的案例：Google 声称其处理器只需 200 秒即可完成超级计算机需一万年才能完成的任务，但随后被 IBM 研究团队戳穿。IBM 证明，通过算法优化，经典超级计算机在特定存储与优化条件下只需 2.5 天即可完成同样的任务，且保真度更高。</p>
+<p>这揭示了行业内的一个潜规则：<strong>巨头们极擅长挑选理论上最有利的算法参数进行公关包装。</strong> 谷歌在纸面上将破解 secp256k1 所需的逻辑比特压低到 1,000 个，属于典型的“玩具模型推演”，对破解比特币的实际工程难度毫无参考价值。</p>
+<h3>三、 治理焦虑：690 万枚裸露比特币与防御主动权</h3>
+<p>3.31 恐慌的另一推手，是利用以太坊（预计 2029 年完成抗量子迁移）和 Solana 的积极应对，来反衬比特币在面临约 690 万枚“公钥暴露”地址（包括中本聪地址）时的所谓“无所作为”。</p>
+<p>这暴露了市场对密码学对抗与比特币治理双重模型的深刻误解：</p>
+<ol>
+<li><strong>经济学悖论</strong>：即便在科幻般的未来，万级物理比特设备成真，其运行成本也将极其昂贵。攻击者的理性选择是去攻击美联储的清算网络或国家级军事情报库，而非耗费极其珍贵的算力去破解沉睡在链上的远古地址。<br/>
+            其经济学逻辑可形式化表示为：
+            <blockquote><strong>C_attack ≫ V_target ⇒ P(attack) → 0</strong></blockquote>
+            因此，即便在理论上具备攻击能力，其成本结构与风险暴露也将显著高于潜在收益，使其不具备稳定的经济可行性。
+            </li>
+<li><strong>“缓慢共识”是终极防御</strong>：历史证明（如 SegWit 升级），在面临真正的系统性威胁时，比特币社区完全有能力迅速达成共识。</li>
+<li><strong>PQC 平滑升级</strong>：比特币完全可以通过软分叉（Soft Fork），采用类似 XMSS 的抗量子签名方案进行平滑过渡。至于无法迁移的休眠地址，社区只需通过共识将其冻结，便可彻底消除相关的抛压风险。</li>
+</ol>
+<h3>四、 动机剖析：学术利益与资本的合谋</h3>
+<p>既然科学理论和工程现实都表明量子破解对比特币的威胁遥遥无期，为何此类叙事依然能精准引爆市场？理论物理学家 Sabine Hossenfelder 揭示了真相：<strong>为了对抗即将到来的“量子寒冬”，学术激励机制与资本市场叙事之间正在形成结构性共振。</strong></p>
+<p>Hossenfelder 多次警告，当前的量子计算充斥着严重的过度包装，目的是骗取巨额风投和政府经费。而做空机构并不关心量子物理，他们只需要一个足够吓人的标题（如“9 分钟劫持”），就能在敏感的市场中制造暴跌并从中获利。Scott Locklin 更是直言，量子计算作为一个领域已经演变成“显而易见的扯淡（obvious bullshit）”，几十年过去，依然没有造出一个真正有用、能长时间纠错的逻辑比特。</p>
+<h3>结论：坚不可摧的密码学基石</h3>
+<p>综合理论分析与工程现状，我们可以得出以下结论：</p>
+<ol>
+<li><strong>叙事逻辑的脆弱性</strong>：将不同体系的算法极限与纠错比例进行简单的乘法叠加，忽略了量子噪声随规模指数级放大以及连续变量控制的物理死结。这种“纸面推演”在面临真实物理约束时表现出了显著的滞后与脱节。</li>
+<li><strong>工程与理论的断层</strong>：实验室环境下的原子捕获技术并不等同于可用的算力。在具备长时间纠错能力的通用逻辑比特出现之前，现有的量子设备仍处于“物理原型”阶段，距离运行复杂的 Shor 算法尚存在质的鸿沟。</li>
+<li><strong>防御机制的主动权</strong>：比特币网络并非静止的靶子。社区不仅拥有充足的窗口期进行抗量子密码学（PQC）升级，且通过软分叉冻结暴露地址等手段，其防御成本远低于攻击者构建万级容错量子计算机的成本。</li>
+</ol>
+<p><strong>本文的立场在于：</strong> 量子计算对比特币的所谓“破解”，在目前看来并非一个单纯的工程进度快慢问题，而是一个**尚未在物理学与信息论层面获得完整可行性证明**的假设性命题。</p>
+<p>科学逻辑要求，任何足以推翻现有安全范式的结论，都必须建立在**可观测、可重复且具备可扩展性**的工程实例之上。在业界给出能够兼顾物理纠错、热力学约束与长时相干性的完整路径之前，这种基于参数拼接的“末日预言”应被视为缺乏实证支撑的理论猜想，而非现实的风险预警。</p>
+<p>面对量子叙事的迷雾，加密网络应当保持科学的审视与理性的乐观。算力或许可以在公关稿中快速迭代，但其最终必须在物理学的宇宙法则面前完成自我证明。量子计算破解比特币，并非“尚未实现”的工程问题，而是“尚未被证明可实现”的物理问题。因此，该命题在数学建模、物理实现与工程扩展三个层面，均缺乏同时成立的必要条件。</p>
+<hr/>
+<h3>参考文献 (References)</h3>
+<p><em>以下引用均来自国际权威学术期刊、预印本平台及顶尖科技媒体，链接真实可查：</em></p>
+<div class="reference-item">
+<strong>[1]</strong> Kalai, G. (2020). The Argument against Quantum Computers, the Quantum Laws of Nature, and Google’s Supremacy Claims. Published in <em>Laws: Rigidity and Dynamics</em> (World Scientific Publishing), 75-121. (arXiv preprint).<br/>
+<em>数学家 Gil Kalai 详细论证量子噪声计算复杂性导致量子纠错不可能的权威论文。</em><br/>
+<strong>链接/DOI</strong>: <a href="https://arxiv.org/abs/2008.05188" target="_blank">https://arxiv.org/abs/2008.05188</a>
+</div>
+<div class="reference-item">
+<strong>[2]</strong> Dyakonov, M. I. (2018). The Case Against Quantum Computing. <em>IEEE Spectrum</em>, 55(12).<br/>
+<em>法国理论物理学家 Michel Dyakonov 痛批量子计算连续变量物理灾难的著名文章。</em><br/>
+<strong>链接</strong>: <a href="https://spectrum.ieee.org/the-case-against-quantum-computing" target="_blank">https://spectrum.ieee.org/the-case-against-quantum-computing</a>
+</div>
+<div class="reference-item">
+<strong>[3]</strong> Das Sarma, S. (2022). Quantum computing has a hype problem. <em>MIT Technology Review</em> (March 28, 2022).<br/>
+<em>顶尖凝聚态物理学家 Sankar Das Sarma 批评当前量子计算机只是“纸老虎”与“真空管造手机”的深度评论。</em><br/>
+<strong>链接</strong>: <a href="https://www.technologyreview.com/2022/03/28/1048355/quantum-computing-has-a-hype-problem/" target="_blank">https://www.technologyreview.com/2022/03/28/1048355/quantum-computing-has-a-hype-problem/</a>
+</div>
+<div class="reference-item">
+<strong>[4]</strong> Arute, F., et al. (Google AI Quantum) (2019). Quantum supremacy using a programmable superconducting processor. <em>Nature</em>, 574(7779), 505-510.<br/>
+<em>谷歌宣布实现“量子霸权”的原始论文，亦是展示其基准测试炒作手段的历史证明。</em><br/>
+<strong>链接/DOI</strong>: <a href="https://www.nature.com/articles/s41586-019-1666-5" target="_blank">https://www.nature.com/articles/s41586-019-1666-5</a>
+</div>
+<div class="reference-item">
+<strong>[5]</strong> Pednault, E., Gunnels, J. A., Nannicini, G., Horesh, L., &amp; Wisnieff, R. (IBM Research) (2019). Leveraging Secondary Storage to Simulate Deep 54-qubit Sycamore Circuits. <em>arXiv preprint arXiv:1910.09534</em>.<br/>
+<em>IBM 科学家团队直接反驳谷歌《Nature》论文，戳穿其“一万年”计算神话的学术论文。</em><br/>
+<strong>链接</strong>: <a href="https://arxiv.org/abs/1910.09534" target="_blank">https://arxiv.org/abs/1910.09534</a>
+</div>
+<div class="reference-item">
+<strong>[6]</strong> Hossenfelder, S. (2022). Quantum Winter Is Coming. <em>Backreaction</em> (Science &amp; Physics Archive).<br/>
+<em>理论物理学家关于“量子泡沫即将破裂”与资本利益绑架学术界导致“量子寒冬”的深度探讨。</em><br/>
+<strong>链接</strong>: <a href="http://backreaction.blogspot.com/2022/11/quantum-winter-is-coming.html" target="_blank">http://backreaction.blogspot.com/2022/11/quantum-winter-is-coming.html</a>
+</div>
+<div class="reference-item">
+<strong>[7]</strong> Gidney, C., &amp; Ekerå, M. (2021). How to factor 2048 bit RSA integers in 8 hours using 20 million noisy qubits. <em>Quantum Journal</em>, 5, 433.<br/>
+<strong>官方链接</strong>: <a href="https://quantum-journal.org/papers/q-2021-04-15-433/" target="_blank">https://quantum-journal.org/papers/q-2021-04-15-433/</a>
+</div>
+<div class="reference-item">
+<strong>[8]</strong> Fowler, A. G., Mariantoni, M., et al. (2012). Surface codes: Towards practical quantum error correction. <em>Physical Review A</em>, 86, 032324.<br/>
+<strong>DOI</strong>: <a href="https://doi.org/10.1103/PhysRevA.86.032324" target="_blank">10.1103/PhysRevA.86.032324</a>
+</div>
+<div class="reference-item">
+<strong>[9]</strong> Locklin, S. (2019). Quantum Computing as a Religion. <em>Scott Locklin’s Blog</em> (Physics &amp; Quantitative Finance).<br/>
+<strong>官方链接</strong>: <a href="https://scottlocklin.wordpress.com/2019/01/15/quantum-computing-as-a-field-is-obvious-bullshit/" target="_blank">https://scottlocklin.wordpress.com/2019/01/15/quantum-computing-as-a-field-is-obvious-bullshit/</a>
+</div>
+<p class="note"><em>(注：本文背景涉及2026年3月底关于 Google Quantum AI 与 Oratomic 论文叠加发酵引发的加密市场恐慌事件，其相关数字基于市场流传的推演模型，本文旨在从根本物理学层面予以反驳。)</em></p>
+</div>
+<!-- 中文版内容结束 -->
+<!-- 英文版内容开始 (默认隐藏) -->
+<div id="content-en" style="display: none;">
+<h1>Piercing the Fog of "10,000 Qubits" and Quantum Supremacy:</h1>
+<p class="subtitle">The Theoretical Fallacy of Quantum Computing Cracking Bitcoin</p>
+<div class="meta">
+<strong>Author</strong>: BTCDAGE<br/>
+<strong>Publication Date</strong>: April 2, 2026<br/>
+<strong>Nostr ID</strong>: <code>npub17ahz4xa3hvkvvhh4wguzzqknp8p7l5nyzzqc3z53uq538r5qgn0q40z7pw</code>
+</div>
+<hr/>
+<div class="abstract">
+<p><strong>Abstract:</strong><br/>
+            On March 31, 2026, the crypto market experienced significant panic triggered by the superimposed hype of two papers from Google Quantum AI and the neutral atom quantum computing company Oratomic. The prevailing narrative claimed that "the number of physical qubits required to crack Bitcoin private keys has dropped to the 10,000 level." This article points out that this conclusion is built on the flawed premise of idealizing and superimposing theoretical parameters from entirely different technological pathways. By reviewing the rigorous arguments of scholars such as Gil Kalai, Michel Dyakonov, and Sankar Das Sarma, as well as IBM's historical reassessment of the "quantum supremacy" experiment, this article deeply analyzes the fundamental challenges current quantum computing faces in terms of scalability—focusing on noise models, error propagation, and physical implementation. Research shows that the so-called "10,000-qubit threat" stems more from parameter extrapolation and PR narratives than from an engineering-capable pathway. The hypothetical threat to Bitcoin far exceeds engineering reality, and the community has an ample window of opportunity for a smooth transition to Post-Quantum Cryptography (PQC). This article clearly asserts: under current physical laws and engineering constraints, there is no verifiable, scalable, and closed-loop engineering pathway to build a fault-tolerant quantum computer capable of cracking Bitcoin. Until the industry provides a complete, verifiable, and scalable engineering implementation, this proposition remains scientifically invalid.</p>
+<p><strong>Keywords:</strong> Quantum Supremacy; Neutral Atoms; Shor's Algorithm; Bitcoin Cryptography; Error Propagation; Tech Bubble; Physical Limits</p>
+</div>
+<hr/>
+<h3>Introduction: The March 31 Panic and the Narrative Trap of "Parameter Multiplication"</h3>
+<p>On March 31, 2026, the crypto market experienced an emotional fluctuation triggered by purported advancements in quantum computing. The market panic primarily stemmed from a combined misinterpretation of two independent research achievements: on one hand, Google Quantum AI claimed to have optimized Shor's algorithm for the secp256k1 curve, allegedly reducing the required logical qubits to the thousands; on the other hand, Oratomic claimed to significantly reduce the physical redundancy required per logical qubit.</p>
+<p>Consequently, the market formed an intuitive but highly oversimplified extrapolation model:<br/>
+<strong>Logical Qubits × Error Correction Overhead = Total Physical Qubits</strong><br/>
+<strong>1,000 (Logical Qubits) × 10 (Error Correction Ratio) = 10,000 (Physical Qubits).</strong></p>
+<p>Based on this, the market deduced that "about 10,000 physical qubits can crack Bitcoin." Combined with sensational headlines like "the superconducting route takes only 9 minutes to hijack a transaction," "the neutral atom route takes only 10 days to crack dormant wallets," and news that laboratories have trapped over 6,100 atoms, the narrative led to a doomsday conclusion that "computational scale only needs a 2x array expansion to catch up with theory."</p>
+<p>However, peeling back this PR facade and examining cutting-edge physics and foundational mathematics reveals a harsh truth: <strong>forcibly multiplying the theoretical limits of different technological pathways under different premises is essentially a method of inconsistent parameter superposition (which this article calls "Frankenstein Math")</strong>. This model completely falls apart in real-world engineering. This "multiplication model" implies several unverified premises: error independence, stability of error correction efficiency under scale expansion, and compatibility between different physical implementation pathways.</p>
+<p>For the statement "10,000 qubits can crack Bitcoin" to be valid, the following conditions must be met simultaneously:</p>
+<ol>
+<li>Errors remain approximately independently distributed in large-scale systems;</li>
+<li>Error correction efficiency does not degrade during scale expansion;</li>
+<li>Parameters from different physical implementation pathways (e.g., superconducting and neutral atoms) can be interchangeably superimposed;</li>
+<li>The system can operate stably over long time scales without accumulative decoherence.</li>
+</ol>
+<p>The aforementioned model implies the following function:</p>
+<blockquote><strong>Q_phys = Q_log × f(error, scale, topology)</strong></blockquote>
+<p>Here, the error correction overhead is not a constant, but a function of the error rate, system scale, and coupling topology. Simplifying it to a constant multiplier is equivalent to assuming:</p>
+<blockquote><strong>∂f/∂scale ≈ 0</strong></blockquote>
+<p>In a more general scenario, <strong>∂f/∂scale &gt; 0</strong>, and it may exhibit super-linear growth in the presence of correlated noise. However, this "constant error correction overhead" assumption currently lacks both theoretical proof and experimental support.</p>
+<p>Currently, no experimental evidence supports that these conditions can hold simultaneously. Therefore, this conclusion is not a scientific engineering deduction but a constructive fantasy based on unverified premises.</p>
+<h3>I. Key Theoretical Constraints: The Scalability Cloud over Quantum Error Correction</h3>
+<p>The core premise of the "10,000 qubits" narrative lies in the assumption that quantum error correction can scale at a near-constant ratio. However, this premise itself is currently a subject of intense ongoing debate in academia.</p>
+<p><strong>1. Gil Kalai and the Challenge of Noise Correlation</strong><br/>
+        The market naively believes that since Oratomic achieved a 10:1 error correction ratio in a local experiment, expanding the array scale means this ratio can be directly applied. However, Gil Kalai, a top mathematician at Yale University and the Hebrew University of Jerusalem, points out that the primary obstacle to quantum computing is not the noise of individual qubits, but the <strong>correlation amplification effect of noise in large-scale entangled systems</strong>. He proposes that in highly entangled systems, errors may exhibit a non-independent distribution, thereby crippling the effectiveness of quantum error correction. If noise has non-local correlations, the premise of the Threshold Theorem is destroyed; yet, the resource estimations for the vast majority of current fault-tolerant quantum computing are built exactly upon the assumption that this theorem holds true.</p>
+<p>This perspective directly challenges a key assumption in many current resource estimation models. If errors grow super-linearly with system scale, the error correction overhead will become unbearable. Therefore, directly extrapolating the error correction efficiency of small-scale experiments (dozens of qubits) to a scale of tens of thousands is mathematically and theoretically invalid in complex systems. Until it is proven that errors do not produce correlation amplification during expansion, such proportional calculations have no physical meaning.</p>
+<p><strong>2. Michel Dyakonov and the Limits of Control Precision</strong><br/>
+        The news claimed that the neutral atom route could run for 10 days to crack dormant wallets. To realize this assumption, the system must simultaneously satisfy these extreme conditions:</p>
+<ul>
+<li><strong>Coherence Time</strong>: T ≫ 10⁶ s;</li>
+<li><strong>Gate Error Rate</strong>: ε ≪ 10⁻¹²;</li>
+<li><strong>Cumulative Gate Operations</strong>: N_ops &gt; 10⁸.</li>
+</ul>
+<p>Furthermore, these conditions must be satisfied simultaneously in the <em>same</em> physical system, rather than achieved independently under different experimental setups.</p>
+<p>French theoretical physicist Michel Dyakonov raised a fundamental objection from a physical implementation perspective: the state space dimensionality of a quantum system grows exponentially with the number of qubits, placing catastrophic demands on the control precision of continuous variables.</p>
+<p>In reality, the coherence time of quantum states is currently measured in seconds or even milliseconds. To maintain a circuit depth of 100 million Toffoli gates across 10,000 entangled physical media <strong>without an irreversible decoherence collapse for 10 continuous days (864,000 seconds)</strong> is unimaginable under current human technological pathways. Given existing error accumulation and control precision constraints, it completely lacks physical realizability. The so-called "10-day attack path" implies an assertion that "long-term coherence can be stably maintained and errors do not accumulate disastrously," but no experimental system currently supports these premises.</p>
+<h3>II. Engineering Reality: Scale Expansion is Not a Linear Problem</h3>
+<p>Even if we assume physics can overcome these theoretical limitations, current engineering reality is enough to prove that claims of "imminent cracking of Bitcoin" are utterly absurd. Equating "a lab trapping 6,100 atoms" with "possessing corresponding computational scale" is a classic conceptual equivocation.<br/>
+        Current quantum systems are still in the NISQ (Noisy Intermediate-Scale Quantum) paradigm, while Shor's algorithm requires the FTQC (Fault-Tolerant Quantum Computing) paradigm. Under the current physics and engineering framework, there is no continuous, scalable path between the two.</p>
+<p><strong>1. Sankar Das Sarma's "Paper Tiger" Argument</strong><br/>
+        Sankar Das Sarma, a top condensed matter physicist at the University of Maryland, bluntly pointed out that today's quantum computer is a <strong>"paper tiger."</strong> He aptly compared it to "trying to make today's best smartphones using vacuum tubes from the early 1900s."</p>
+<p>Trapping 6,100 atoms in a lab using optical tweezers merely fixes them in a grid. To run Shor's algorithm, these atoms must execute high-fidelity, multi-step two-qubit gate operations. In reality, fidelity drops exponentially as the number of operational steps increases. Scaling from hundreds of qubits to tens of thousands of fault-tolerant qubits is a leap in computational paradigm, not a simple magnification of scale.</p>
+<p><strong>2. Forged Benchmarks: IBM's Reassessment of "Quantum Supremacy"</strong><br/>
+        Recall the 2019 case where Google claimed to have achieved "quantum supremacy": Google stated its processor took only 200 seconds to complete a task that would take a supercomputer 10,000 years. This was subsequently debunked by the IBM research team. IBM proved that through algorithm optimization, a classical supercomputer under specific storage and optimization conditions needed only 2.5 days to complete the same task, and with higher fidelity.</p>
+<p>This exposed an unspoken rule in the industry: <strong>Tech giants are highly adept at cherry-picking the most theoretically favorable algorithm parameters for PR packaging.</strong> Google's on-paper reduction of logical qubits needed to crack secp256k1 to 1,000 is a typical "toy model extrapolation," holding absolutely no reference value for the actual engineering difficulty of cracking Bitcoin.</p>
+<h3>III. Governance Anxiety: 6.9 Million Exposed Bitcoins and Defensive Initiative</h3>
+<p>Another driver of the March 31 panic was using the proactive responses of Ethereum (expected to complete post-quantum migration in 2029) and Solana to contrast with Bitcoin's supposed "inaction" when facing approximately 6.9 million "public key exposed" addresses (including Satoshi Nakamoto's addresses).</p>
+<p>This exposes a profound market misunderstanding of both cryptographic warfare and Bitcoin's governance model:</p>
+<ol>
+<li><strong>Economic Paradox</strong>: Even in a sci-fi future where a 10,000-physical-qubit device becomes reality, its operational costs would be astronomical. A rational attacker's choice would be to target the Federal Reserve's clearing network or national military intelligence databases, rather than squandering extremely precious computing power to crack ancient addresses dormant on the blockchain.<br/>
+            The economic logic can be formalized as:
+            <blockquote><strong>C_attack ≫ V_target ⇒ P(attack) → 0</strong></blockquote>
+            Therefore, even with theoretical attack capabilities, the cost structure and risk exposure would be significantly higher than potential gains, making it economically unviable.
+            </li>
+<li><strong>"Slow Consensus" as the Ultimate Defense</strong>: History proves (such as the SegWit upgrade) that when faced with a genuine systemic threat, the Bitcoin community is fully capable of reaching a rapid consensus.</li>
+<li><strong>PQC Smooth Upgrade</strong>: Bitcoin can seamlessly transition via a Soft Fork to adopt a quantum-resistant signature scheme similar to XMSS. As for dormant addresses that cannot migrate, the community can simply freeze them via consensus, completely eliminating the associated sell-off risks.</li>
+</ol>
+<h3>IV. Motivation Analysis: The Collusion of Academic Interests and Capital</h3>
+<p>Since scientific theory and engineering reality both indicate that a quantum crack of Bitcoin is a distant fantasy, why do such narratives still accurately detonate the market? Theoretical physicist Sabine Hossenfelder reveals the truth: <strong>To fight off the impending "Quantum Winter," a structural resonance is forming between academic incentive mechanisms and capital market narratives.</strong></p>
+<p>Hossenfelder has warned multiple times that current quantum computing is severely overhyped to secure massive VC funding and government grants. Short-sellers do not care about quantum physics; they only need a sufficiently terrifying headline (like "9-minute hijack") to manufacture a crash in sensitive markets and profit from it. Scott Locklin is even more direct, stating that quantum computing as a field has devolved into "obvious bullshit," noting that decades have passed without the creation of a single truly useful logical qubit capable of long-term error correction.</p>
+<h3>Conclusion: The Indestructible Cornerstone of Cryptography</h3>
+<p>Synthesizing theoretical analysis and current engineering status, we can draw the following conclusions:</p>
+<ol>
+<li><strong>The Fragility of the Narrative Logic</strong>: Simply multiplying the algorithmic limits and error correction ratios of different systems ignores the physical dead-ends of quantum noise amplifying exponentially with scale and the control of continuous variables. This "paper extrapolation" shows a massive disconnect when faced with real-world physical constraints.</li>
+<li><strong>The Chasm Between Engineering and Theory</strong>: Lab-environment atom trapping does not equate to usable computing power. Until a universal logical qubit with long-term error correction capabilities appears, existing quantum devices remain in the "physical prototype" stage, separated by a qualitative chasm from running complex algorithms like Shor's.</li>
+<li><strong>Initiative in Defensive Mechanisms</strong>: The Bitcoin network is not a stationary target. The community not only has an ample window to conduct Post-Quantum Cryptography (PQC) upgrades but can also freeze exposed addresses via soft forks. Its defensive costs are astronomically lower than an attacker's cost of building a 10,000-qubit fault-tolerant quantum computer.</li>
+</ol>
+<p><strong>The stance of this article is clear:</strong> The so-called "cracking" of Bitcoin by quantum computing is currently not merely an issue of engineering pace; it is a <strong>hypothetical proposition that has not yet obtained full feasibility proof at the physics and information theory levels.</strong></p>
+<p>Scientific logic demands that any conclusion capable of overthrowing the existing security paradigm must be built on <strong>observable, repeatable, and scalable</strong> engineering instances. Until the industry provides a complete pathway that balances physical error correction, thermodynamic constraints, and long-term coherence, these "doomsday prophecies" based on spliced parameters should be viewed as theoretical conjectures lacking empirical support, not realistic risk warnings.</p>
+<p>In the face of the fog of quantum narratives, crypto networks should maintain scientific scrutiny and rational optimism. Computing power can iterate rapidly in PR drafts, but it must ultimately prove itself before the universal laws of physics. Quantum computing cracking Bitcoin is not an "unrealized" engineering problem; it is an "unproven to be realizable" physical problem. Therefore, the necessary conditions for this proposition are simultaneously lacking at the levels of mathematical modeling, physical implementation, and engineering expansion.</p>
+<hr/>
+<h3>References</h3>
+<p><em>The following citations are all from internationally authoritative academic journals, preprint platforms, and top tech media. The links are authentic and verifiable:</em></p>
+<div class="reference-item">
+<strong>[1]</strong> Kalai, G. (2020). The Argument against Quantum Computers, the Quantum Laws of Nature, and Google’s Supremacy Claims. Published in <em>Laws: Rigidity and Dynamics</em> (World Scientific Publishing), 75-121. (arXiv preprint).<br/>
+<em>Mathematician Gil Kalai's authoritative paper detailing how the computational complexity of quantum noise makes quantum error correction impossible.</em><br/>
+<strong>Link/DOI</strong>: <a href="https://arxiv.org/abs/2008.05188" target="_blank">https://arxiv.org/abs/2008.05188</a>
+</div>
+<div class="reference-item">
+<strong>[2]</strong> Dyakonov, M. I. (2018). The Case Against Quantum Computing. <em>IEEE Spectrum</em>, 55(12).<br/>
+<em>French theoretical physicist Michel Dyakonov's famous article heavily criticizing the physical disaster of continuous variables in quantum computing.</em><br/>
+<strong>Link</strong>: <a href="https://spectrum.ieee.org/the-case-against-quantum-computing" target="_blank">https://spectrum.ieee.org/the-case-against-quantum-computing</a>
+</div>
+<div class="reference-item">
+<strong>[3]</strong> Das Sarma, S. (2022). Quantum computing has a hype problem. <em>MIT Technology Review</em> (March 28, 2022).<br/>
+<em>Top condensed matter physicist Sankar Das Sarma's in-depth commentary criticizing current quantum computers as "paper tigers" and comparing them to making smartphones with vacuum tubes.</em><br/>
+<strong>Link</strong>: <a href="https://www.technologyreview.com/2022/03/28/1048355/quantum-computing-has-a-hype-problem/" target="_blank">https://www.technologyreview.com/2022/03/28/1048355/quantum-computing-has-a-hype-problem/</a>
+</div>
+<div class="reference-item">
+<strong>[4]</strong> Arute, F., et al. (Google AI Quantum) (2019). Quantum supremacy using a programmable superconducting processor. <em>Nature</em>, 574(7779), 505-510.<br/>
+<em>Google's original paper announcing "quantum supremacy," which also serves as historical proof of its benchmarking hype tactics.</em><br/>
+<strong>Link/DOI</strong>: <a href="https://www.nature.com/articles/s41586-019-1666-5" target="_blank">https://www.nature.com/articles/s41586-019-1666-5</a>
+</div>
+<div class="reference-item">
+<strong>[5]</strong> Pednault, E., Gunnels, J. A., Nannicini, G., Horesh, L., &amp; Wisnieff, R. (IBM Research) (2019). Leveraging Secondary Storage to Simulate Deep 54-qubit Sycamore Circuits. <em>arXiv preprint arXiv:1910.09534</em>.<br/>
+<em>The academic paper by the IBM research team directly refuting Google's "Nature" paper and busting its "10,000 years" computing myth.</em><br/>
+<strong>Link</strong>: <a href="https://arxiv.org/abs/1910.09534" target="_blank">https://arxiv.org/abs/1910.09534</a>
+</div>
+<div class="reference-item">
+<strong>[6]</strong> Hossenfelder, S. (2022). Quantum Winter Is Coming. <em>Backreaction</em> (Science &amp; Physics Archive).<br/>
+<em>A theoretical physicist's deep dive into the impending bursting of the "quantum bubble" and how capital interests hijacking academia could lead to a "quantum winter."</em><br/>
+<strong>Link</strong>: <a href="http://backreaction.blogspot.com/2022/11/quantum-winter-is-coming.html" target="_blank">http://backreaction.blogspot.com/2022/11/quantum-winter-is-coming.html</a>
+</div>
+<div class="reference-item">
+<strong>[7]</strong> Gidney, C., &amp; Ekerå, M. (2021). How to factor 2048 bit RSA integers in 8 hours using 20 million noisy qubits. <em>Quantum Journal</em>, 5, 433.<br/>
+<strong>Official Link</strong>: <a href="https://quantum-journal.org/papers/q-2021-04-15-433/" target="_blank">https://quantum-journal.org/papers/q-2021-04-15-433/</a>
+</div>
+<div class="reference-item">
+<strong>[8]</strong> Fowler, A. G., Mariantoni, M., et al. (2012). Surface codes: Towards practical quantum error correction. <em>Physical Review A</em>, 86, 032324.<br/>
+<strong>DOI</strong>: <a href="https://doi.org/10.1103/PhysRevA.86.032324" target="_blank">10.1103/PhysRevA.86.032324</a>
+</div>
+<div class="reference-item">
+<strong>[9]</strong> Locklin, S. (2019). Quantum Computing as a Religion. <em>Scott Locklin’s Blog</em> (Physics &amp; Quantitative Finance).<br/>
+<strong>Official Link</strong>: <a href="https://scottlocklin.wordpress.com/2019/01/15/quantum-computing-as-a-field-is-obvious-bullshit/" target="_blank">https://scottlocklin.wordpress.com/2019/01/15/quantum-computing-as-a-field-is-obvious-bullshit/</a>
+</div>
+<p class="note"><em>(Note: The background of this article involves the panic in the crypto market triggered by the superimposed hype of papers from Google Quantum AI and Oratomic in late March 2026. The associated figures are based on the extrapolation models circulating in the market. This article aims to refute them from a fundamental physics perspective.)</em></p>
+</div>
+<!-- 英文版内容结束 -->
+</div>
+<!-- 语言切换脚本 -->
+<script>
+    function toggleLanguage() {
+        const zhContent = document.getElementById('content-zh');
+        const enContent = document.getElementById('content-en');
+        const toggleBtn = document.getElementById('lang-toggle');
+
+        if (zhContent.style.display === 'none') {
+            // 切换为中文
+            zhContent.style.display = 'block';
+            enContent.style.display = 'none';
+            toggleBtn.innerHTML = 'Read in English 🇬🇧';
+            document.title = '拨开“万级比特”与量子霸权迷雾：——量子计算破解比特币的理论谬误';
+            document.documentElement.lang = 'zh-CN';
+        } else {
+            // 切换为英文
+            zhContent.style.display = 'none';
+            enContent.style.display = 'block';
+            toggleBtn.innerHTML = '阅读中文版 🇨🇳';
+            document.title = 'Piercing the Fog of "10,000 Qubits" and Quantum Supremacy...';
+            document.documentElement.lang = 'en';
+        }
+    }
+</script>
+</body>
+</html>

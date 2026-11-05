@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BTCDAGE 金字塔定投计算器，十级阶梯模型，采用本地预设最高价与手动价格计算，无需行情接口。">
+  <title>金字塔定投计算器 | BTCDAGE</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <script defer src="assets/site.js"></script>
+  <script defer src="js/config.js"></script>
+  <style>
+    .dca-shell{max-width:1160px;margin:0 auto;padding:56px 24px 22px}
+    .dca-heading{text-align:center;margin:0 auto 35px;max-width:850px}
+    .dca-heading h1{font-size:clamp(29px,4vw,44px);line-height:1.3;letter-spacing:-.04em;margin:14px 0}
+    .dca-heading p{font-size:14px;color:#abb5c0;margin:0}
+    .dca-dashboard{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:18px}
+    .dca-card{background:#151b23;border:1px solid #303946;padding:22px 24px;border-radius:12px;min-width:0}
+    .dca-card .dca-label{font-size:13px;color:#adb7c2;margin:0 0 10px}
+    .dca-card .dca-value{font-size:clamp(21px,2.8vw,29px);font-weight:750;color:#f1f3f4;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+    .dca-card .dca-unit{font-size:13px;color:#9fa9b4;margin-left:6px}
+    .dca-card.primary{border-color:#a8834d;background:linear-gradient(135deg,#25251e,#171c22)}
+    .dca-card.primary .dca-value{color:#f2cd8a}
+    .dca-panel{border:1px solid #303946;background:#111820;border-radius:12px;padding:23px 25px;margin-bottom:18px}
+    .dca-controls{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end}
+    .dca-field{display:flex;flex-direction:column;gap:7px;min-width:220px;flex:1}
+    .dca-field label{font-size:13px;font-weight:650;color:#e6e9ed}
+    .dca-field input{width:100%;padding:10px 13px;color:#fff;background:#0b1118;border:1px solid #485260;border-radius:7px;font-size:15px}
+    .dca-field input:focus{outline:2px solid #c89e60;outline-offset:1px}
+    .dca-button{border:1px solid #485260;border-radius:7px;background:#252d38;color:#f4f5f6;font-weight:650;padding:11px 16px;font-size:13px;min-height:45px}
+    .dca-button.primary{background:#dfb76f;color:#17130e;border-color:#dfb76f}
+    .dca-button:hover{filter:brightness(1.13)}
+    .dca-button:disabled{opacity:.6;cursor:wait}
+    .dca-status{font-size:13px;color:#aebbc9;margin:16px 0 0;min-height:22px}
+    .dca-status[data-state="error"]{color:#e6ba76}
+    .dca-panel p.dca-note{font-size:13px;color:#aeb8c3;line-height:1.8;margin:14px 0 0}
+    .dca-table-frame{border:1px solid #303946;border-radius:12px;overflow:hidden;background:#111820}
+    .dca-table-scroll{overflow-x:auto}
+    .dca-table{border-collapse:collapse;width:100%;min-width:850px;font-variant-numeric:tabular-nums;font-size:13px}
+    .dca-table th{background:#202934;color:#e7bd77;font-weight:700;text-align:right;padding:17px 16px;border-bottom:1px solid #354251;white-space:nowrap}
+    .dca-table td{text-align:right;padding:14px 16px;color:#e5e9ec;border-bottom:1px solid #27313d;white-space:nowrap}
+    .dca-table td:first-child,.dca-table th:first-child{text-align:center}
+    .dca-table tbody tr:nth-child(even){background:#151e27}
+    .dca-table tbody tr:hover{background:#222d38}
+    .dca-table tbody tr:last-child td{border-bottom:0}
+    .dca-table .dca-total{color:#f3ca83;font-weight:700}
+    .dca-disclaimer{font-size:12px;color:#98a3af;line-height:1.9;margin:18px 0}
+    @media(max-width:750px){.dca-shell{padding:30px 16px}.dca-dashboard{grid-template-columns:1fr}.dca-controls{align-items:stretch}.dca-field{min-width:100%}.dca-panel{padding:18px}.dca-button{flex:1}}
+  </style>
+</head>
+<body class="dca-page">
+  <main class="dca-shell">
+    <div class="dca-heading">
+      <div class="eyebrow">Independent Tools / Bitcoin</div>
+      <h1>₿ 金字塔定投计算器</h1>
+      <p>Pyramid Investment Calculator · 十级阶梯定投模拟</p>
+    </div>
+
+    <section class="dca-dashboard" aria-label="价格概览">
+      <div class="dca-card">
+        <div class="dca-label">预设历史最高价 · Preset High</div>
+        <div><span id="presetPrice" class="dca-value">—</span><span class="dca-unit">USD</span></div>
+      </div>
+      <div class="dca-card primary">
+        <div class="dca-label">计算使用最高价 · Calculation High</div>
+        <div><span id="highestPrice" class="dca-value">—</span><span class="dca-unit">USD</span></div>
+      </div>
+    </section>
+
+    <section class="dca-panel" aria-label="定投表参数">
+      <div class="dca-controls">
+        <div class="dca-field">
+          <label for="manualPrice">手动指定参考价格（USD，可选）</label>
+          <input id="manualPrice" type="number" min="0.01" step="any" inputmode="decimal" placeholder="留空则采用本地预设最高价">
+        </div>
+        <button id="applyPrice" class="dca-button primary" type="button">按输入价格计算</button>
+        <button id="resetPrice" class="dca-button" type="button">恢复预设计算</button>
+      </div>
+      <p class="dca-status" id="priceStatus" role="status" aria-live="polite">表格已按本地预设最高价生成。</p>
+      <p class="dca-note">每级预设投入 100 美元起，逐级加倍；每级价格比上一阶下降 10%（相对最高价按 0.9 的阶次计算），共 10 阶。表中为数学模拟，不包含手续费、滑点或实际成交条件。</p>
+    </section>
+
+    <div class="dca-table-frame">
+      <div class="dca-table-scroll">
+        <table class="dca-table" id="resultTable">
+          <thead><tr>
+            <th>阶梯<br>Level</th><th>价格 (USD)<br>Price</th>
+            <th>投资金额 (USD)<br>Investment</th><th>买入币量 (BTC)<br>Purchased</th>
+            <th>累计投入 (USD)<br>Total Invested</th><th>累计币量 (BTC)<br>Total BTC</th>
+          </tr></thead><tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <p class="dca-disclaimer">数据来源：本站本地预设参数和用户手动输入。页面不连接任何行情接口。计算仅供研究参考，不构成投资建议。<br>Local calculation only · No live price requests.</p>
+  </main>
+  <script>
+  (() => {
+    'use strict';
+    const FALLBACK_PRESET = 126199;
+    const INITIAL_USD = 100;
+    const DROP_RATIO = 0.9;
+    const LEVEL_COUNT = 10;
+    const byId = id => document.getElementById(id);
+    let preset = FALLBACK_PRESET;
+    let manual = null;
+
+    const formatUsd = v => v.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    const validPrice = v => typeof v === 'number' && Number.isFinite(v) && v > 0;
+    const status = (message, error = false) => {
+      byId('priceStatus').textContent = message;
+      byId('priceStatus').dataset.state = error ? 'error' : 'ok';
+    };
+    function calculationHigh() { return Math.max(preset, manual ?? 0); }
+    function renderTable() {
+      const high = calculationHigh();
+      byId('presetPrice').textContent = formatUsd(preset);
+      byId('highestPrice').textContent = formatUsd(high);
+      let invested = 0, coins = 0, amount = INITIAL_USD;
+      const rows = [];
+      for (let level = 1; level <= LEVEL_COUNT; level++) {
+        const price = high * Math.pow(DROP_RATIO, level);
+        const bought = amount / price;
+        invested += amount;
+        coins += bought;
+        rows.push(`<tr><td>${level}</td><td>${formatUsd(price)}</td><td>${formatUsd(amount)}</td><td>${bought.toFixed(6)}</td><td class="dca-total">${formatUsd(invested)}</td><td class="dca-total">${coins.toFixed(6)}</td></tr>`);
+        amount *= 2;
+      }
+      byId('resultTable').tBodies[0].innerHTML = rows.join('');
+    }
+    function init() {
+      // 配置脚本是本地资源；加载异常也有兜底值，无需等待外部网络。
+      if (typeof CONFIG !== 'undefined' && validPrice(Number(CONFIG.PRESET_HIGHEST_PRICE))) {
+        preset = Number(CONFIG.PRESET_HIGHEST_PRICE);
+      }
+      renderTable(); // 关键：页面一加载先展示十级表格
+      byId('applyPrice').addEventListener('click', () => {
+        const raw = byId('manualPrice').value.trim();
+        const input = Number(raw);
+        if (!raw || !validPrice(input)) {
+          status('请输入大于 0 的有效价格，例如 85000。', true);
+          byId('manualPrice').focus();
+          return;
+        }
+        manual = input;
+        renderTable();
+        status('已按手动价格更新；计算最高价仍取预设最高价与手动价格中的较大值。');
+      });
+      byId('manualPrice').addEventListener('keydown', event => {
+        if (event.key === 'Enter') byId('applyPrice').click();
+      });
+      byId('resetPrice').addEventListener('click', () => {
+        manual = null;
+        byId('manualPrice').value = '';
+        renderTable();
+        status('已恢复按本地预设最高价计算。');
+      });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, {once:true});
+    else init();
+  })();
+  </script>
+</body>
+</html>

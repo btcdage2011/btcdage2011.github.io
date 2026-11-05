@@ -1,0 +1,13 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PDF 文档资料馆 | BTCDAGE</title><meta name="description" content="BTCDAGE PDF 文档目录">
+<link rel="stylesheet" href="assets/site.css"><link rel="stylesheet" href="assets/content.css">
+<script src="assets/content.js"></script><script defer src="assets/site.js"></script></head>
+<body class="content-index"><main class="content-shell"><div class="content-hero">
+<div class="eyebrow">BTCDAGE / Documents</div><h1>PDF 文档资料馆</h1>
+<p>阅读及下载公开文档。原有 PDF 阅读链接继续保留，新增 PDF 只需在 content.js 登记一条记录。</p></div>
+<div id="pdf-list" class="content-list"></div></main>
+<script>(function(){const box=document.getElementById('pdf-list');window.BTCDAGE_CONTENT.PDF_DOCS.forEach(item=>{
+const a=document.createElement('a'),div=document.createElement('div'),date=document.createElement('div'),title=document.createElement('h2'),arrow=document.createElement('span');
+a.className='content-item';a.href=item.page||item.file;date.className='content-date';date.textContent=item.category||'PDF';title.textContent=item.title;
+arrow.className='content-arrow';arrow.textContent='↗';div.append(date,title);a.append(div,arrow);box.append(a);});})();</script>
+</body></html>

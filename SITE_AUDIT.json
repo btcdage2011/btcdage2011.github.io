@@ -1,0 +1,117 @@
+{
+  "entrypoint": "index.html",
+  "live_html": [
+    "1sate26.html",
+    "BrainWalletGenerator.html",
+    "BrainWalletSignerV0.1.0.html",
+    "BrainWalletSignerV0.2.0.html",
+    "articles.html",
+    "btc-dca-ladder.html",
+    "gjnszjc.html",
+    "index.html",
+    "nav.html",
+    "nsmp.html",
+    "quantum_article.html",
+    "rbhy.html",
+    "rbhy_en.html",
+    "tbrs.html",
+    "tbzd.html"
+  ],
+  "removed_orphan_html": [
+    "ai.html",
+    "bnnms.html",
+    "btc-dca-ladder1.0.html",
+    "btcdage_sats.html",
+    "dgzs.html",
+    "dgzs0.0.html",
+    "dgzs0.1.html",
+    "dgzs_http.html",
+    "index1.0.html",
+    "lzpj.html",
+    "mempool.html",
+    "nav - 1.0.html",
+    "nav - 副本 (2).html",
+    "nav - 副本 (3).html",
+    "nav - 副本.html",
+    "quantum_article_en.html",
+    "quantum_article_zh.html",
+    "sats - 副本.html",
+    "sats.html",
+    "sats0.1.html",
+    "sats_http.html",
+    "solo.html",
+    "ssdgzs.html"
+  ],
+  "pdf_wrapper_pages": [
+    "BrainWalletSignerV0.1.0.html",
+    "BrainWalletSignerV0.2.0.html",
+    "gjnszjc.html",
+    "nsmp.html",
+    "rbhy.html",
+    "rbhy_en.html",
+    "tbrs.html",
+    "tbzd.html"
+  ],
+  "preserved_external_directories": [
+    "pdf/",
+    "down/"
+  ],
+  "live_edges": {
+    "1sate26.html": [],
+    "BrainWalletGenerator.html": [
+      "nav.html"
+    ],
+    "BrainWalletSignerV0.1.0.html": [
+      "nav.html"
+    ],
+    "BrainWalletSignerV0.2.0.html": [
+      "nav.html"
+    ],
+    "articles.html": [
+      "nav.html"
+    ],
+    "btc-dca-ladder.html": [
+      "nav.html"
+    ],
+    "gjnszjc.html": [
+      "nav.html"
+    ],
+    "index.html": [
+      "nav.html"
+    ],
+    "nav.html": [
+      "1sate26.html",
+      "BrainWalletGenerator.html",
+      "BrainWalletSignerV0.1.0.html",
+      "BrainWalletSignerV0.2.0.html",
+      "articles.html",
+      "btc-dca-ladder.html",
+      "gjnszjc.html",
+      "index.html",
+      "nsmp.html",
+      "quantum_article.html",
+      "rbhy.html",
+      "tbrs.html",
+      "tbzd.html"
+    ],
+    "nsmp.html": [
+      "nav.html"
+    ],
+    "quantum_article.html": [],
+    "rbhy.html": [
+      "nav.html",
+      "rbhy_en.html"
+    ],
+    "rbhy_en.html": [
+      "nav.html",
+      "rbhy.html"
+    ],
+    "tbrs.html": [
+      "nav.html"
+    ],
+    "tbzd.html": [
+      "nav.html"
+    ]
+  },
+  "note": "A page is live if reachable from index.html through markup, JS fetch() and local HTML links. External URLs are not crawled. pdf/ and down/ intentionally absent from package."
+}

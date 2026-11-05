@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BTCDAGE 网站资源导航：文集、论文、工具与教程。">
+  <title>资源导航 | BTCDAGE</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <script defer src="assets/site.js"></script>
+  <style>
+    /* 本文件专有视觉样式放这里；通用导航样式在 assets/site.css */
+    .catalog-intro {padding:65px 0 18px}
+    .catalog-intro h1 {font-size:clamp(34px,5vw,56px);margin:14px 0}
+    .catalog-intro p {color:var(--sub)}
+    .catalog-help {font-size:13px;color:#aab5c0;padding:14px 19px;border:1px solid var(--line);border-radius:8px;background:#111820;margin:22px 0}
+    .catalog-group {padding-top:38px}
+  </style>
+</head>
+<body>
+<main class="page-shell">
+  <header class="catalog-intro">
+    <div class="eyebrow">Library / Resource index</div>
+    <h1>开放资源目录</h1>
+    <p>研究、写作、文献、教程与工具。</p>
+  </header>
+  <div class="catalog-help">持续整理的个人资源目录。每个链接都可以独立访问，新增内容直接编辑本文件即可。</div>
+
+  <!-- ============================================================
+       【维护说明】你只需要修改 nav.html，无需懂 JavaScript。
+       新增链接：找到分类中的 <div class="resource-grid">，复制下面的 3 行：
+
+       <a class="resource" href="新页面.html">
+         <span class="rmain">新页面的显示名称</span><span class="arrow">↗</span>
+       </a>
+
+       如果是外部网站：使用完整 https:// 地址，并添加
+       target="_blank" rel="noopener noreferrer"。
+       建议新增的 .html 文件与 nav.html 放在同一目录。
+       如需新的分类，复制一整段 <section> ... </section>。
+       页眉顶部的 6 个固定栏目在 assets/site.js 的 MAIN_NAV 配置里。
+       不需要为了增加普通资源而改动该配置。
+       ============================================================ -->
+
+  <!-- 分类 1：📊 定投与论文。在下方复制链接即可新增资源。 -->
+  <section class="section catalog-group">
+    <div class="section-top"><h2>📊 定投与论文</h2></div>
+    <div class="resource-grid">
+      <a class="resource" href="btc-dca-ladder.html">
+        <span class="rmain">₿ 金字塔定投表</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="resource" href="quantum_article.html">
+        <span class="rmain">《拨开“万级比特”与量子霸权迷雾——量子计算破解比特币的理论谬误》</span>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 分类 2：📚 囤币宝典。在下方复制链接即可新增资源。 -->
+  <section class="section catalog-group">
+    <div class="section-top"><h2>📚 囤币宝典</h2></div>
+    <div class="resource-grid">
+      <!-- 新增 PDF 只需在 assets/content.js 中登记；统一资料馆会自动展示 -->
+      <a class="resource" href="pdf-library.html">
+        <span class="rmain">PDF 文档资料馆（集中更新）</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="resource" href="rbhy.html">
+        <span class="rmain">《人饼合一：高级脑完全手册》</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="resource" href="tbzd.html">
+        <span class="rmain">《囤饼之道 达哥微博精选》</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="resource" href="tbrs.html">
+        <span class="rmain">《囤饼人生 时代剪影》</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="resource" href="articles.html">
+        <span class="rmain">达哥文集 (持续更新)</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="resource" href="nsmp.html">
+        <span class="rmain">NSMP 协议白皮书 v1.0</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="resource" href="1sate26.html">
+        <span class="rmain">《亿聪哲史》第26期——A Coding Holder</span>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 分类 3：🛠️ 实战教程。在下方复制链接即可新增资源。 -->
+  <section class="section catalog-group">
+    <div class="section-top"><h2>🛠️ 实战教程</h2></div>
+    <div class="resource-grid">
+      <a class="resource" href="BrainWalletGenerator.html">
+        <span class="rmain">₿₿₿ 高级脑钱包生成器</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="resource" href="gjnszjc.html">
+        <span class="rmain">高级脑实战演示教程</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="resource" href="BrainWalletSignerV0.1.0.html">
+        <span class="rmain">₿₿ 比特币冷热分离：基于 NextBTC 的离线签名实验教程</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="resource" href="BrainWalletSignerV0.2.0.html">
+        <span class="rmain">₿₿ 比特币“时间胶囊”：基于新版离线签名工具的时间锁（CLTV）实验教程</span>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 分类 4：🌍 社区与联系。在下方复制链接即可新增资源。 -->
+  <section class="section catalog-group">
+    <div class="section-top"><h2>🌍 社区与联系</h2></div>
+    <div class="resource-grid">
+      <a class="resource" href="https://weibo.com/btcdage" target="_blank" rel="noopener noreferrer">
+        <span class="rmain">微博 (QQ：2082007308)</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="resource" href="https://x.com/BtcDage" target="_blank" rel="noopener noreferrer">
+        <span class="rmain">Twitter / X (需魔法)</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="resource" href="https://iris.to/btcdage" target="_blank" rel="noopener noreferrer">
+        <span class="rmain">Nostr 去中心化社交 (需魔法)</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="resource" href="https://dgchat.github.io/#contact=npub17ahz4xa3hvkvvhh4wguzzqknp8p7l5nyzzqc3z53uq538r5qgn0q40z7pw" target="_blank" rel="noopener noreferrer">
+        <span class="rmain">Nostr加密通讯（DageChat）</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="resource" href="https://startbitcoin.org/" target="_blank" rel="noopener noreferrer">
+        <span class="rmain">友情链接：比特币布道者</span>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+  </section>
+</main>
+</body>
+</html>
