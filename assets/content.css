@@ -1,0 +1,27 @@
+/* 文章与 PDF 目录的专用样式，与旧工具页面彻底隔离 */
+body.content-index, body.content-reading {background:#0b0e12;color:#e8edf2;font-family:system-ui,-apple-system,"Microsoft YaHei",sans-serif;}
+.content-shell {width:min(1080px,calc(100% - 36px));margin:52px auto 90px;}
+.content-hero {padding:42px 0 24px;}
+.content-hero .eyebrow {color:#d9b674;letter-spacing:.18em;font-size:12px;text-transform:uppercase;}
+.content-hero h1 {font-size:clamp(32px,4vw,52px);margin:14px 0;color:#f7f7f5;}
+.content-hero p {color:#aeb8c5;line-height:1.8;}
+.content-list {display:grid;gap:12px;margin:20px 0 50px;}
+.content-item {display:flex;gap:24px;align-items:center;justify-content:space-between;padding:22px 24px;background:#141b24;border:1px solid #2b3540;border-radius:12px;text-decoration:none;color:#edf2f5;transition:border-color .15s,transform .15s;}
+.content-item:hover {border-color:#dfb76f;transform:translateY(-1px);}
+.content-item h2 {font-size:18px;line-height:1.5;margin:5px 0;color:#f1f3f5;}
+.content-date {font-size:12px;color:#d9b674;}
+.content-arrow {color:#dfb76f;font-size:21px;}
+.content-search {box-sizing:border-box;width:100%;padding:14px 16px;background:#111820;color:#fff;border:1px solid #35424f;border-radius:9px;font-size:15px;}
+.content-search:focus {outline:2px solid #dfb76f;outline-offset:2px;}
+.content-count {font-size:13px;color:#aeb8c5;margin-top:12px;}
+.reading-shell {width:min(930px,calc(100% - 28px));margin:48px auto 90px;}
+.reading-breadcrumb {display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 18px;color:#acb8c5;font-size:13px;}
+.reading-breadcrumb a,.reading-next a {color:#dfb76f;text-decoration:none;}
+body.content-reading .article-block {background:#f9fafb;color:#222b36;padding:clamp(22px,5vw,54px);border-radius:14px;border:1px solid #e2e7eb;box-shadow:0 12px 50px #0003;max-width:none;margin:0;overflow-wrap:anywhere;line-height:1.92;font-size:16px;}
+body.content-reading .article-block h2 {color:#16283b;font-size:clamp(25px,3vw,34px);line-height:1.45;margin:0 0 23px;}
+body.content-reading .article-block p {color:#263342;line-height:1.92;}
+body.content-reading .article-block a {color:#17649a;}
+body.content-reading .article-block img {max-width:100%;height:auto;}
+body.content-reading .article-block pre {max-width:100%;overflow-x:auto;}
+.reading-next {margin:26px 0;text-align:center;}
+@media(max-width:600px){.content-shell {width:calc(100% - 24px);margin-top:20px}.content-item{padding:18px}.reading-shell{margin-top:25px}}

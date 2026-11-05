@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>一厢情愿的“害减”策略 | 达哥文集</title>
+<meta name="description" content="BTCDAGE 达哥文集 · 一厢情愿的“害减”策略">
+<link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../assets/content.css">
+<script defer src="../assets/site.js"></script></head>
+<body class="content-reading"><main class="reading-shell">
+<div class="reading-breadcrumb"><a href="../articles.html">← 返回达哥文集</a><span>2025-09-13</span></div>
+<section class="article-block" id="article-0">
+<h2>一厢情愿的“害减”策略</h2>
+<p><em>作者：达哥（@btcdage）｜日期：2025-09-13</em></p>
+<p>Bitcoin Core v30放宽OP_RETURN限制以应对铭文问题，这操作简直让人看不懂，这就好比打仗时，敌人(铭文/垃圾数据)专打你没戴头盔的头部(隔离见证区)。</p>
+<p>你的应对策略不是赶紧想办法把头盔戴上，反而是把身上的防弹衣(OP RETURN限制)脱了，指着胸口说:“嘿看这里，打我这儿! 求别打脸！“</p>
+<p>铭文泛滥导致utxo恶性膨胀的根源，是隔离见证区不仅空间巨大，还享受75%的费用折扣。它就像一个敞开的、打特价的后门。</p>
+<p>正确的防御方法，应该是:</p>
+<p>1.取消隔离见证的费用折扣，让所有数据存储成本一致。</p>
+<p>2.对隔离见证区增加一个合理的字符长度限制(比如1k-4k)，打散那些试图写入完整文件(比如病毒代码)的“数据投毒”行为提升网络安全，同时增加了攻击成本。</p>
+<p>现在Core的策略，对这两个核心问题避而不谈。只要那个“又大又便宜”的后门还敞开着，你把OPRETURN的门修得再漂亮有什么用?</p>
+<p>人家写铭文的、搞投毒的，依然会选择那个最划算、空间最大的地方。这哪是什么“害减”(Harm Reduction)策略，这根本就是一厢情愿。</p>
+<p>治标不治本，甚至可能为更大规模的链上数据滥用打开了新的想象空间。</p>
+<p>建议core团队放弃幻想，先软分叉限制隔离见证的大小。再在合适的时候硬分叉把隔离见证的费率折扣取消了。这才是保障大饼安全的唯一正确方式。</p>
+<p style="text-align:right;"><a href="../articles.html">↑ 返回文集目录</a></p>
+<hr/>
+</section>
+<div class="reading-next"><a href="../articles.html">← 查看所有文章</a></div>
+</main></body></html>

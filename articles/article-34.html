@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>脑钱包的安全性 | 达哥文集</title>
+<meta name="description" content="BTCDAGE 达哥文集 · 脑钱包的安全性">
+<link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../assets/content.css">
+<script defer src="../assets/site.js"></script></head>
+<body class="content-reading"><main class="reading-shell">
+<div class="reading-breadcrumb"><a href="../articles.html">← 返回达哥文集</a><span>2021-10-06</span></div>
+<section class="article-block" id="article-34">
+<h2>脑钱包的安全性</h2>
+<p><em>作者：达哥（@btcdage）｜日期：2021-10-06</em></p>
+<p>今天聊聊脑钱包的安全性。</p>
+<p>脑钱包原理上就是由用户自己定制一个复杂口令作为种子使用SHA256来生成私钥-地址对。脑钱包的口令需要满足两个条件:</p>
+<p>1、 足够复杂，防止撞库（不能使用什么password1234之类的弱口令）</p>
+<p>2、 足够好记，防止自己忘记（不要复杂到自己都记不住的结果）</p>
+<p>虽然看起来两者矛盾，但是相对于随机生成的私钥纸钱包来说，脑钱包的确是牺牲一部分随机性来满足方便记忆的条件，拥有脑钱包，基本上可以做到人到哪财产到哪的境界。</p>
+<p>一些hodler认为脑钱包是不够安全的，理由是，人类定制的种子不够随机，他们害怕自己的脑钱包口令被黑客采用字典碰撞的方式暴力破解。其实这是一种对黑客技能的误解，对于黑客来说，无非就是通过网络渗透获取信息或者字典撞库两种方案。</p>
+<p>只要我们在离线环境中生成脑钱包，且保证口令的复杂性和保密性，私钥在需要时可以重新生成，且避免存储或泄露。那么，通过网络渗透入侵的路就已经完全堵死了。</p>
+<p>实际上我们需要的是让脑钱包口令本身拥有足够的随机性即可防范字典撞库。</p>
+<p>比如我们用脑钱包口令：“这是一个BTC达哥的脑钱包口令，但是我现在还不怎么安全”作为种子可以生成地址-私钥对：</p>
+<p>15wzWHUJQZxf4xhTjir6GyTLQjsjxx6cFg</p>
+<p>5Jx1jLJKUhXWGviQf3CkJU2DN9BJ32MbeQHTZcedpqVhh1p2t2m</p>
+<p>理论上，我们是认为SHA256是安全无法撞库的（否则即使不用脑钱包，比特币系统也不安全），那么除非黑客的字典里存在明码“这是一个BTC达哥的脑钱包口令，但是我现在还不怎么安全”，否则，是不会通过撞库获取到比特币钱包地址：15wzWHUJQZxf4xhTjir6GyTLQjsjxx6cFg的私钥的。</p>
+<p>当然，正如同这个脑钱包口令本身所述，这样的脑钱包口令在安全性上仍然存在较大风险。</p>
+<p>下面举一个例子来使用一个安全性较高的脑钱包（以下均为离线操作，有条件的话可以使用完全离线电脑进行。操作完成后清除浏览器缓存）：</p>
+<p>我这里有两本书：</p>
+<p>1、 中华书局出版《万历十五年》2006年8月北京第一版。</p>
+<p>2、 江苏文艺出版社《厚黑学》2009年11月第一版。</p>
+<p>取《万历十五年》103页最后一段第一句话：</p>
+<p>“起初，万历皇帝还没有意识到事态的严重，他以为对张鲸作一番口头申诉就足以了事。”作为字符串A。</p>
+<p>《厚黑学》109页最后一段第一句话：</p>
+<p>“一个国家之进化，也好比小孩一天一天地长大。”作为字符B。</p>
+<br/>
+<p>第一步：用字符串A生成私钥A。</p>
+<p>起初，万历皇帝还没有意识到事态的严重，他以为对张鲸作一番口头申诉就足以了事。</p>
+<p>-------&gt;5JUf9k1VgXmLP37EEsMWV5i11oFYkHhiR8fNiFR6x37BY6ugaPP</p>
+<p>第二步：用字符串B生成一个私钥B。</p>
+<p>一个国家之进化，也好比小孩一天一天地长大。</p>
+<p>-&gt;5KSgM4vYWNSDYDpHKMS5Py7FDAPa7dtgT7pReSqGPLg2irNCGch</p>
+<p>第三步、将私钥A与私钥B使用连接字符串“我是BTC达哥的第N个安全私钥”连接起来，生成我们需要使用的私钥地址对，记下生成的地址，私钥不记录（不记录才安全）。</p>
+<br/>
+<p>5JUf9k1VgXmLP37EEsMWV5i11oFYkHhiR8fNiFR6x37BY6ugaPP我是BTC达哥的第1个安全私钥5KSgM4vYWNSDYDpHKMS5Py7FDAPa7dtgT7pReSqGPLg2irNCGch</p>
+<p>-&gt;</p>
+<p>地址：1EQxBpa3ng3oLu419GuoqL76Kjx4CTtJeL</p>
+<p>私钥：</p>
+<p>5KQgXaHW9eE4FbQY621BmT27TYoBMfGTgAEan1cWqcqgHYgJVA7</p>
+<br/>
+<p>5JUf9k1VgXmLP37EEsMWV5i11oFYkHhiR8fNiFR6x37BY6ugaPP我是BTC达哥的第2个安全私钥5KSgM4vYWNSDYDpHKMS5Py7FDAPa7dtgT7pReSqGPLg2irNCGch</p>
+<p>-&gt;</p>
+<p>地址：16KU65mJiCJTXW1oucxz68ZdLfYNq8pzL</p>
+<p>私钥：</p>
+<p>5JFNxAAAoMvd8cSxJysHPvweUFpVySPAQpdp2qTZAudFNerHHYv</p>
+<br/>
+<p>5JUf9k1VgXmLP37EEsMWV5i11oFYkHhiR8fNiFR6x37BY6ugaPP我是BTC达哥的第3个安全私钥5KSgM4vYWNSDYDpHKMS5Py7FDAPa7dtgT7pReSqGPLg2irNCGch</p>
+<p>-&gt;</p>
+<p>地址：1H2gEob2yANVEQRvbWYkehSNNDXgVi5NSX</p>
+<p>私钥：</p>
+<p>5KPvGn2HSQK9EZvwKcDeNJUDP2g9CV4Ndqn1oSrpBhV7CR5vF4g</p>
+<br/>
+<p>上面就生成了3个足够安全且只有自己知道“生成方法”的比特币地址，我们只需要记下地址，私钥不用记。以后需要的时候重新生成一次私钥即可。</p>
+<br/>
+<p>然后我们只需要在本本上记下（当然也可以记在脑子里）并备份到多个物理地点：</p>
+<p>“1、中华书局出版《万历十五年》2006年8月北京第一版103页最后一段第一句话</p>
+<p>2、江苏文艺出版社《厚黑学》2009年11月第一版103页最后一段第一句话”</p>
+<p>最后你把下面事项牢牢记在心理：</p>
+<p>1、两个私钥用连接词连接以后作为种子生成私钥；</p>
+<p>2、连接词是“我是BTC达哥的第N个安全私钥”，N是变量，以生成多个地址。</p>
+<br/>
+<p>多亏了 SHA256 算法，这个世界没有任何黑客字典或其他碰撞方式可以破解这样的脑钱包口令，除非你自己告诉别人。</p>
+<p>而且，这种方式比一般的纸钱包要安全的多，毕竟即使泄露了本本上的两句话，别人也无法得知你的种子生成方式及连接词是什么。</p>
+<p>当然我这里只是一个例子，发挥你自己的想象力，可以创造出更好更安全的脑钱包口令生成和保存方式。</p>
+<p style="text-align:right;"><a href="../articles.html">↑ 返回文集目录</a></p>
+<hr/>
+</section>
+<div class="reading-next"><a href="../articles.html">← 查看所有文章</a></div>
+</main></body></html>
